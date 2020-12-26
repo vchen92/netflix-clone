@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from './../../axios';
 
 import './Category.css';
-
-const base_image_url = 'https://image.tmdb.org/t/p/original/';
+import Poster from './Poster/Poster';
 
 function Category({ title, fetchUrl, isLargeRow }) {
 	const [movies, setMovies] = useState([]);
@@ -24,18 +23,10 @@ function Category({ title, fetchUrl, isLargeRow }) {
 
 			<div className="category__posters">
 				{movies.map(movie => (
-					<img
+					<Poster
 						key={movie.id}
-						className={`category__poster ${
-							isLargeRow && 'category__posterLarge'
-						}`}
-						src={
-							base_image_url +
-							(isLargeRow
-								? movie.poster_path
-								: movie.backdrop_path)
-						}
-						alt={movie.name}
+						movie={movie}
+						isLargeRow={isLargeRow}
 					/>
 				))}
 			</div>
