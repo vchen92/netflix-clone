@@ -1,11 +1,13 @@
 import './App.css';
 import Category from './components/Category/Category';
 import requests from './requests';
+import Banner from './components/Banner/Banner';
 
 function App() {
 	return (
 		<div className="app">
-			<h1>This is a netflix app!!!</h1>
+			{/* Nav */}
+			<Banner />
 			{Object.keys(requests).map(key => (
 				<Category
 					key={key}
