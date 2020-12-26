@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from './../../axios';
+import Poster from './Poster/Poster';
 
 import './Category.css';
-import Poster from './Poster/Poster';
 
 function Category({ title, fetchUrl, isLargeRow }) {
 	const [movies, setMovies] = useState([]);
